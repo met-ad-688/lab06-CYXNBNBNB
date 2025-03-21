@@ -132,7 +132,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="step-1-load-the-dataset" class="level1 unnumbered">
 <h1 class="unnumbered">Step 1: Load the Dataset</h1>
-<div id="cell-3" class="cell">
+<div id="cell-3" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.io <span class="im">as</span> pio</span>
@@ -150,6 +150,170 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Show Schema and Sample Data</span></span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>df.printSchema()</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>df.show(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>your 131072x1 screen size is bogus. expect trouble</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>25/03/21 15:45:45 WARN Utils: Your hostname, DESKTOP-AEE21PF resolves to a loopback address: 127.0.1.1; using 192.168.167.208 instead (on interface eth0)
+25/03/21 15:45:45 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>25/03/21 15:45:47 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>                                                                                </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>root
+ |-- ID: string (nullable = true)
+ |-- LAST_UPDATED_DATE: string (nullable = true)
+ |-- LAST_UPDATED_TIMESTAMP: timestamp (nullable = true)
+ |-- DUPLICATES: integer (nullable = true)
+ |-- POSTED: string (nullable = true)
+ |-- EXPIRED: string (nullable = true)
+ |-- DURATION: integer (nullable = true)
+ |-- SOURCE_TYPES: string (nullable = true)
+ |-- SOURCES: string (nullable = true)
+ |-- URL: string (nullable = true)
+ |-- ACTIVE_URLS: string (nullable = true)
+ |-- ACTIVE_SOURCES_INFO: string (nullable = true)
+ |-- TITLE_RAW: string (nullable = true)
+ |-- BODY: string (nullable = true)
+ |-- MODELED_EXPIRED: string (nullable = true)
+ |-- MODELED_DURATION: integer (nullable = true)
+ |-- COMPANY: integer (nullable = true)
+ |-- COMPANY_NAME: string (nullable = true)
+ |-- COMPANY_RAW: string (nullable = true)
+ |-- COMPANY_IS_STAFFING: boolean (nullable = true)
+ |-- EDUCATION_LEVELS: string (nullable = true)
+ |-- EDUCATION_LEVELS_NAME: string (nullable = true)
+ |-- MIN_EDULEVELS: integer (nullable = true)
+ |-- MIN_EDULEVELS_NAME: string (nullable = true)
+ |-- MAX_EDULEVELS: integer (nullable = true)
+ |-- MAX_EDULEVELS_NAME: string (nullable = true)
+ |-- EMPLOYMENT_TYPE: integer (nullable = true)
+ |-- EMPLOYMENT_TYPE_NAME: string (nullable = true)
+ |-- MIN_YEARS_EXPERIENCE: integer (nullable = true)
+ |-- MAX_YEARS_EXPERIENCE: integer (nullable = true)
+ |-- IS_INTERNSHIP: boolean (nullable = true)
+ |-- SALARY: integer (nullable = true)
+ |-- REMOTE_TYPE: integer (nullable = true)
+ |-- REMOTE_TYPE_NAME: string (nullable = true)
+ |-- ORIGINAL_PAY_PERIOD: string (nullable = true)
+ |-- SALARY_TO: integer (nullable = true)
+ |-- SALARY_FROM: integer (nullable = true)
+ |-- LOCATION: string (nullable = true)
+ |-- CITY: string (nullable = true)
+ |-- CITY_NAME: string (nullable = true)
+ |-- COUNTY: integer (nullable = true)
+ |-- COUNTY_NAME: string (nullable = true)
+ |-- MSA: integer (nullable = true)
+ |-- MSA_NAME: string (nullable = true)
+ |-- STATE: integer (nullable = true)
+ |-- STATE_NAME: string (nullable = true)
+ |-- COUNTY_OUTGOING: integer (nullable = true)
+ |-- COUNTY_NAME_OUTGOING: string (nullable = true)
+ |-- COUNTY_INCOMING: integer (nullable = true)
+ |-- COUNTY_NAME_INCOMING: string (nullable = true)
+ |-- MSA_OUTGOING: integer (nullable = true)
+ |-- MSA_NAME_OUTGOING: string (nullable = true)
+ |-- MSA_INCOMING: integer (nullable = true)
+ |-- MSA_NAME_INCOMING: string (nullable = true)
+ |-- NAICS2: integer (nullable = true)
+ |-- NAICS2_NAME: string (nullable = true)
+ |-- NAICS3: integer (nullable = true)
+ |-- NAICS3_NAME: string (nullable = true)
+ |-- NAICS4: integer (nullable = true)
+ |-- NAICS4_NAME: string (nullable = true)
+ |-- NAICS5: integer (nullable = true)
+ |-- NAICS5_NAME: string (nullable = true)
+ |-- NAICS6: integer (nullable = true)
+ |-- NAICS6_NAME: string (nullable = true)
+ |-- TITLE: string (nullable = true)
+ |-- TITLE_NAME: string (nullable = true)
+ |-- TITLE_CLEAN: string (nullable = true)
+ |-- SKILLS: string (nullable = true)
+ |-- SKILLS_NAME: string (nullable = true)
+ |-- SPECIALIZED_SKILLS: string (nullable = true)
+ |-- SPECIALIZED_SKILLS_NAME: string (nullable = true)
+ |-- CERTIFICATIONS: string (nullable = true)
+ |-- CERTIFICATIONS_NAME: string (nullable = true)
+ |-- COMMON_SKILLS: string (nullable = true)
+ |-- COMMON_SKILLS_NAME: string (nullable = true)
+ |-- SOFTWARE_SKILLS: string (nullable = true)
+ |-- SOFTWARE_SKILLS_NAME: string (nullable = true)
+ |-- ONET: string (nullable = true)
+ |-- ONET_NAME: string (nullable = true)
+ |-- ONET_2019: string (nullable = true)
+ |-- ONET_2019_NAME: string (nullable = true)
+ |-- CIP6: string (nullable = true)
+ |-- CIP6_NAME: string (nullable = true)
+ |-- CIP4: string (nullable = true)
+ |-- CIP4_NAME: string (nullable = true)
+ |-- CIP2: string (nullable = true)
+ |-- CIP2_NAME: string (nullable = true)
+ |-- SOC_2021_2: string (nullable = true)
+ |-- SOC_2021_2_NAME: string (nullable = true)
+ |-- SOC_2021_3: string (nullable = true)
+ |-- SOC_2021_3_NAME: string (nullable = true)
+ |-- SOC_2021_4: string (nullable = true)
+ |-- SOC_2021_4_NAME: string (nullable = true)
+ |-- SOC_2021_5: string (nullable = true)
+ |-- SOC_2021_5_NAME: string (nullable = true)
+ |-- LOT_CAREER_AREA: integer (nullable = true)
+ |-- LOT_CAREER_AREA_NAME: string (nullable = true)
+ |-- LOT_OCCUPATION: integer (nullable = true)
+ |-- LOT_OCCUPATION_NAME: string (nullable = true)
+ |-- LOT_SPECIALIZED_OCCUPATION: integer (nullable = true)
+ |-- LOT_SPECIALIZED_OCCUPATION_NAME: string (nullable = true)
+ |-- LOT_OCCUPATION_GROUP: integer (nullable = true)
+ |-- LOT_OCCUPATION_GROUP_NAME: string (nullable = true)
+ |-- LOT_V6_SPECIALIZED_OCCUPATION: integer (nullable = true)
+ |-- LOT_V6_SPECIALIZED_OCCUPATION_NAME: string (nullable = true)
+ |-- LOT_V6_OCCUPATION: integer (nullable = true)
+ |-- LOT_V6_OCCUPATION_NAME: string (nullable = true)
+ |-- LOT_V6_OCCUPATION_GROUP: integer (nullable = true)
+ |-- LOT_V6_OCCUPATION_GROUP_NAME: string (nullable = true)
+ |-- LOT_V6_CAREER_AREA: integer (nullable = true)
+ |-- LOT_V6_CAREER_AREA_NAME: string (nullable = true)
+ |-- SOC_2: string (nullable = true)
+ |-- SOC_2_NAME: string (nullable = true)
+ |-- SOC_3: string (nullable = true)
+ |-- SOC_3_NAME: string (nullable = true)
+ |-- SOC_4: string (nullable = true)
+ |-- SOC_4_NAME: string (nullable = true)
+ |-- SOC_5: string (nullable = true)
+ |-- SOC_5_NAME: string (nullable = true)
+ |-- LIGHTCAST_SECTORS: string (nullable = true)
+ |-- LIGHTCAST_SECTORS_NAME: string (nullable = true)
+ |-- NAICS_2022_2: integer (nullable = true)
+ |-- NAICS_2022_2_NAME: string (nullable = true)
+ |-- NAICS_2022_3: integer (nullable = true)
+ |-- NAICS_2022_3_NAME: string (nullable = true)
+ |-- NAICS_2022_4: integer (nullable = true)
+ |-- NAICS_2022_4_NAME: string (nullable = true)
+ |-- NAICS_2022_5: integer (nullable = true)
+ |-- NAICS_2022_5_NAME: string (nullable = true)
+ |-- NAICS_2022_6: integer (nullable = true)
+ |-- NAICS_2022_6_NAME: string (nullable = true)
+
+25/03/21 15:45:52 WARN package: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
++--------------------+-----------------+----------------------+----------+--------+---------+--------+--------------------+--------------------+--------------------+-----------+-------------------+--------------------+--------------------+---------------+----------------+--------+--------------------+-----------+-------------------+----------------+---------------------+-------------+-------------------+-------------+------------------+---------------+--------------------+--------------------+--------------------+-------------+------+-----------+----------------+-------------------+---------+-----------+--------------------+--------------------+-------------+------+--------------+-----+--------------------+-----+----------+---------------+--------------------+---------------+--------------------+------------+--------------------+------------+--------------------+------+--------------------+------+--------------------+------+--------------------+------+--------------------+------+--------------------+------------------+-------------------+--------------------+--------------------+--------------------+--------------------+-----------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+----------+--------------------+----------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+----------+--------------------+----------+--------------------+----------+---------------+----------+---------------+---------------+--------------------+--------------+--------------------+--------------------------+-------------------------------+--------------------+-------------------------+-----------------------------+----------------------------------+-----------------+----------------------+-----------------------+----------------------------+------------------+-----------------------+-------+--------------------+-------+--------------------+-------+---------------+-------+---------------+-----------------+----------------------+------------+--------------------+------------+--------------------+------------+--------------------+------------+--------------------+------------+--------------------+
+|                  ID|LAST_UPDATED_DATE|LAST_UPDATED_TIMESTAMP|DUPLICATES|  POSTED|  EXPIRED|DURATION|        SOURCE_TYPES|             SOURCES|                 URL|ACTIVE_URLS|ACTIVE_SOURCES_INFO|           TITLE_RAW|                BODY|MODELED_EXPIRED|MODELED_DURATION| COMPANY|        COMPANY_NAME|COMPANY_RAW|COMPANY_IS_STAFFING|EDUCATION_LEVELS|EDUCATION_LEVELS_NAME|MIN_EDULEVELS| MIN_EDULEVELS_NAME|MAX_EDULEVELS|MAX_EDULEVELS_NAME|EMPLOYMENT_TYPE|EMPLOYMENT_TYPE_NAME|MIN_YEARS_EXPERIENCE|MAX_YEARS_EXPERIENCE|IS_INTERNSHIP|SALARY|REMOTE_TYPE|REMOTE_TYPE_NAME|ORIGINAL_PAY_PERIOD|SALARY_TO|SALARY_FROM|            LOCATION|                CITY|    CITY_NAME|COUNTY|   COUNTY_NAME|  MSA|            MSA_NAME|STATE|STATE_NAME|COUNTY_OUTGOING|COUNTY_NAME_OUTGOING|COUNTY_INCOMING|COUNTY_NAME_INCOMING|MSA_OUTGOING|   MSA_NAME_OUTGOING|MSA_INCOMING|   MSA_NAME_INCOMING|NAICS2|         NAICS2_NAME|NAICS3|         NAICS3_NAME|NAICS4|         NAICS4_NAME|NAICS5|         NAICS5_NAME|NAICS6|         NAICS6_NAME|             TITLE|         TITLE_NAME|         TITLE_CLEAN|              SKILLS|         SKILLS_NAME|  SPECIALIZED_SKILLS|SPECIALIZED_SKILLS_NAME|      CERTIFICATIONS| CERTIFICATIONS_NAME|       COMMON_SKILLS|  COMMON_SKILLS_NAME|     SOFTWARE_SKILLS|SOFTWARE_SKILLS_NAME|      ONET|           ONET_NAME| ONET_2019|      ONET_2019_NAME|                CIP6|           CIP6_NAME|                CIP4|           CIP4_NAME|                CIP2|           CIP2_NAME|SOC_2021_2|     SOC_2021_2_NAME|SOC_2021_3|     SOC_2021_3_NAME|SOC_2021_4|SOC_2021_4_NAME|SOC_2021_5|SOC_2021_5_NAME|LOT_CAREER_AREA|LOT_CAREER_AREA_NAME|LOT_OCCUPATION| LOT_OCCUPATION_NAME|LOT_SPECIALIZED_OCCUPATION|LOT_SPECIALIZED_OCCUPATION_NAME|LOT_OCCUPATION_GROUP|LOT_OCCUPATION_GROUP_NAME|LOT_V6_SPECIALIZED_OCCUPATION|LOT_V6_SPECIALIZED_OCCUPATION_NAME|LOT_V6_OCCUPATION|LOT_V6_OCCUPATION_NAME|LOT_V6_OCCUPATION_GROUP|LOT_V6_OCCUPATION_GROUP_NAME|LOT_V6_CAREER_AREA|LOT_V6_CAREER_AREA_NAME|  SOC_2|          SOC_2_NAME|  SOC_3|          SOC_3_NAME|  SOC_4|     SOC_4_NAME|  SOC_5|     SOC_5_NAME|LIGHTCAST_SECTORS|LIGHTCAST_SECTORS_NAME|NAICS_2022_2|   NAICS_2022_2_NAME|NAICS_2022_3|   NAICS_2022_3_NAME|NAICS_2022_4|   NAICS_2022_4_NAME|NAICS_2022_5|   NAICS_2022_5_NAME|NAICS_2022_6|   NAICS_2022_6_NAME|
++--------------------+-----------------+----------------------+----------+--------+---------+--------+--------------------+--------------------+--------------------+-----------+-------------------+--------------------+--------------------+---------------+----------------+--------+--------------------+-----------+-------------------+----------------+---------------------+-------------+-------------------+-------------+------------------+---------------+--------------------+--------------------+--------------------+-------------+------+-----------+----------------+-------------------+---------+-----------+--------------------+--------------------+-------------+------+--------------+-----+--------------------+-----+----------+---------------+--------------------+---------------+--------------------+------------+--------------------+------------+--------------------+------+--------------------+------+--------------------+------+--------------------+------+--------------------+------+--------------------+------------------+-------------------+--------------------+--------------------+--------------------+--------------------+-----------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+----------+--------------------+----------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+----------+--------------------+----------+--------------------+----------+---------------+----------+---------------+---------------+--------------------+--------------+--------------------+--------------------------+-------------------------------+--------------------+-------------------------+-----------------------------+----------------------------------+-----------------+----------------------+-----------------------+----------------------------+------------------+-----------------------+-------+--------------------+-------+--------------------+-------+---------------+-------+---------------+-----------------+----------------------+------------+--------------------+------------+--------------------+------------+--------------------+------------+--------------------+------------+--------------------+
+|1f57d95acf4dc67ed...|         9/6/2024|  2024-09-06 16:32:...|         0|6/2/2024| 6/8/2024|       6|   [\n  "Company"\n]|[\n  "brassring.c...|[\n  "https://sjo...|         []|               null|Enterprise Analys...|31-May-2024\n\nEn...|       6/8/2024|               6|  894731|          Murphy USA| Murphy USA|              false|       [\n  2\n]| [\n  "Bachelor's ...|            2|  Bachelor's degree|         null|              null|              1|Full-time (&gt; 32 h...|                   2|                   2|        false|  null|          0|          [None]|               null|     null|       null|{\n  "lat": 33.20...|RWwgRG9yYWRvLCBBUg==|El Dorado, AR|  5139|     Union, AR|20980|       El Dorado, AR|    5|  Arkansas|           5139|           Union, AR|           5139|           Union, AR|       20980|       El Dorado, AR|       20980|       El Dorado, AR|    44|        Retail Trade|   441|Motor Vehicle and...|  4413|Automotive Parts,...| 44133|Automotive Parts ...|441330|Automotive Parts ...|ET29C073C03D1F86B4|Enterprise Analysts|enterprise analys...|[\n  "KS126DB6T06...|[\n  "Merchandisi...|[\n  "KS126DB6T06...|   [\n  "Merchandisi...|                  []|                  []|[\n  "KS126706DPF...|[\n  "Mathematics...|[\n  "KS440W865GC...|[\n  "SQL (Progra...|15-2051.01|Business Intellig...|15-2051.01|Business Intellig...|[\n  "45.0601",\n...|[\n  "Economics, ...|[\n  "45.06",\n  ...|[\n  "Economics",...|[\n  "45",\n  "27...|[\n  "Social Scie...|   15-0000|Computer and Math...|   15-2000|Mathematical Scie...|   15-2050|Data Scientists|   15-2051|Data Scientists|             23|Information Techn...|        231010|Business Intellig...|                  23101011|           General ERP Analy...|                2310|     Business Intellig...|                     23101011|              General ERP Analy...|           231010|  Business Intellig...|                   2310|        Business Intellig...|                23|   Information Techn...|15-0000|Computer and Math...|15-2000|Mathematical Scie...|15-2050|Data Scientists|15-2051|Data Scientists|        [\n  7\n]|  [\n  "Artificial ...|          44|        Retail Trade|         441|Motor Vehicle and...|        4413|Automotive Parts,...|       44133|Automotive Parts ...|      441330|Automotive Parts ...|
+|0cb072af26757b6c4...|         8/2/2024|  2024-08-02 13:08:...|         0|6/2/2024| 8/1/2024|    null| [\n  "Job Board"\n]| [\n  "maine.gov"\n]|[\n  "https://job...|         []|               null|Oracle Consultant...|Oracle Consultant...|       8/1/2024|            null|  133098|Smx Corporation L...|        SMX|               true|      [\n  99\n]| [\n  "No Educatio...|           99|No Education Listed|         null|              null|              1|Full-time (&gt; 32 h...|                   3|                   3|        false|  null|          1|          Remote|               null|     null|       null|{\n  "lat": 44.31...|    QXVndXN0YSwgTUU=|  Augusta, ME| 23011|  Kennebec, ME|12300|Augusta-Watervill...|   23|     Maine|          23011|        Kennebec, ME|          23011|        Kennebec, ME|       12300|Augusta-Watervill...|       12300|Augusta-Watervill...|    56|Administrative an...|   561|Administrative an...|  5613| Employment Services| 56132|Temporary Help Se...|561320|Temporary Help Se...|ET21DDA63780A7DC09| Oracle Consultants|oracle consultant...|[\n  "KS122626T55...|[\n  "Procurement...|[\n  "KS122626T55...|   [\n  "Procurement...|                  []|                  []|                  []|                  []|[\n  "BGSBF3F508F...|[\n  "Oracle Busi...|15-2051.01|Business Intellig...|15-2051.01|Business Intellig...|                  []|                  []|                  []|                  []|                  []|                  []|   15-0000|Computer and Math...|   15-2000|Mathematical Scie...|   15-2050|Data Scientists|   15-2051|Data Scientists|             23|Information Techn...|        231010|Business Intellig...|                  23101012|           Oracle Consultant...|                2310|     Business Intellig...|                     23101012|              Oracle Consultant...|           231010|  Business Intellig...|                   2310|        Business Intellig...|                23|   Information Techn...|15-0000|Computer and Math...|15-2000|Mathematical Scie...|15-2050|Data Scientists|15-2051|Data Scientists|             null|                  null|          56|Administrative an...|         561|Administrative an...|        5613| Employment Services|       56132|Temporary Help Se...|      561320|Temporary Help Se...|
+|85318b12b3331fa49...|         9/6/2024|  2024-09-06 16:32:...|         1|6/2/2024| 7/7/2024|      35| [\n  "Job Board"\n]|[\n  "dejobs.org"\n]|[\n  "https://dej...|         []|               null|        Data Analyst|Taking care of pe...|      6/10/2024|               8|39063746|            Sedgwick|   Sedgwick|              false|       [\n  2\n]| [\n  "Bachelor's ...|            2|  Bachelor's degree|         null|              null|              1|Full-time (&gt; 32 h...|                   5|                null|        false|  null|          0|          [None]|               null|     null|       null|{\n  "lat": 32.77...|    RGFsbGFzLCBUWA==|   Dallas, TX| 48113|    Dallas, TX|19100|Dallas-Fort Worth...|   48|     Texas|          48113|          Dallas, TX|          48113|          Dallas, TX|       19100|Dallas-Fort Worth...|       19100|Dallas-Fort Worth...|    52|Finance and Insur...|   524|Insurance Carrier...|  5242|Agencies, Brokera...| 52429|Other Insurance R...|524291|    Claims Adjusting|ET3037E0C947A02404|      Data Analysts|        data analyst|[\n  "KS1218W78FG...|[\n  "Management"...|[\n  "ESF3939CE1F...|   [\n  "Exception R...|[\n  "KS683TN76T7...|[\n  "Security Cl...|[\n  "KS1218W78FG...|[\n  "Management"...|[\n  "KS126HY6YLT...|[\n  "Microsoft O...|15-2051.01|Business Intellig...|15-2051.01|Business Intellig...|                  []|                  []|                  []|                  []|                  []|                  []|   15-0000|Computer and Math...|   15-2000|Mathematical Scie...|   15-2050|Data Scientists|   15-2051|Data Scientists|             23|Information Techn...|        231113|Data / Data Minin...|                  23111310|                   Data Analyst|                2311|     Data Analysis and...|                     23111310|                      Data Analyst|           231113|  Data / Data Minin...|                   2311|        Data Analysis and...|                23|   Information Techn...|15-0000|Computer and Math...|15-2000|Mathematical Scie...|15-2050|Data Scientists|15-2051|Data Scientists|             null|                  null|          52|Finance and Insur...|         524|Insurance Carrier...|        5242|Agencies, Brokera...|       52429|Other Insurance R...|      524291|    Claims Adjusting|
+|1b5c3941e54a1889e...|         9/6/2024|  2024-09-06 16:32:...|         1|6/2/2024|7/20/2024|      48| [\n  "Job Board"\n]|[\n  "disabledper...|[\n  "https://www...|         []|               null|Sr. Lead Data Mgm...|About this role:\...|      6/12/2024|              10|37615159|         Wells Fargo|Wells Fargo|              false|      [\n  99\n]| [\n  "No Educatio...|           99|No Education Listed|         null|              null|              1|Full-time (&gt; 32 h...|                   3|                null|        false|  null|          0|          [None]|               null|     null|       null|{\n  "lat": 33.44...|    UGhvZW5peCwgQVo=|  Phoenix, AZ|  4013|  Maricopa, AZ|38060|Phoenix-Mesa-Chan...|    4|   Arizona|           4013|        Maricopa, AZ|           4013|        Maricopa, AZ|       38060|Phoenix-Mesa-Chan...|       38060|Phoenix-Mesa-Chan...|    52|Finance and Insur...|   522|Credit Intermedia...|  5221|Depository Credit...| 52211|  Commercial Banking|522110|  Commercial Banking|ET2114E0404BA30075|Management Analysts|sr lead data mgmt...|[\n  "KS123QX62QY...|[\n  "Exit Strate...|[\n  "KS123QX62QY...|   [\n  "Exit Strate...|                  []|                  []|[\n  "KS7G6NP6R6L...|[\n  "Reliability...|[\n  "KS4409D76NW...|[\n  "SAS (Softwa...|15-2051.01|Business Intellig...|15-2051.01|Business Intellig...|                  []|                  []|                  []|                  []|                  []|                  []|   15-0000|Computer and Math...|   15-2000|Mathematical Scie...|   15-2050|Data Scientists|   15-2051|Data Scientists|             23|Information Techn...|        231113|Data / Data Minin...|                  23111310|                   Data Analyst|                2311|     Data Analysis and...|                     23111310|                      Data Analyst|           231113|  Data / Data Minin...|                   2311|        Data Analysis and...|                23|   Information Techn...|15-0000|Computer and Math...|15-2000|Mathematical Scie...|15-2050|Data Scientists|15-2051|Data Scientists|        [\n  6\n]|  [\n  "Data Privac...|          52|Finance and Insur...|         522|Credit Intermedia...|        5221|Depository Credit...|       52211|  Commercial Banking|      522110|  Commercial Banking|
+|cb5ca25f02bdf25c1...|        6/19/2024|   2024-06-19 03:00:00|         0|6/2/2024|6/17/2024|      15|[\n  "FreeJobBoar...|[\n  "craigslist....|[\n  "https://mod...|         []|               null|Comisiones de $10...|Comisiones de $10...|      6/17/2024|              15|       0|        Unclassified|      LH/GM|              false|      [\n  99\n]| [\n  "No Educatio...|           99|No Education Listed|         null|              null|              3|Part-time / full-...|                null|                null|        false| 92500|          0|          [None]|               year|   150000|      35000|{\n  "lat": 37.63...|    TW9kZXN0bywgQ0E=|  Modesto, CA|  6099|Stanislaus, CA|33700|         Modesto, CA|    6|California|           6099|      Stanislaus, CA|           6099|      Stanislaus, CA|       33700|         Modesto, CA|       33700|         Modesto, CA|    99|Unclassified Indu...|   999|Unclassified Indu...|  9999|Unclassified Indu...| 99999|Unclassified Indu...|999999|Unclassified Indu...|ET0000000000000000|       Unclassified|comisiones de por...|                  []|                  []|                  []|                     []|                  []|                  []|                  []|                  []|                  []|                  []|15-2051.01|Business Intellig...|15-2051.01|Business Intellig...|                  []|                  []|                  []|                  []|                  []|                  []|   15-0000|Computer and Math...|   15-2000|Mathematical Scie...|   15-2050|Data Scientists|   15-2051|Data Scientists|             23|Information Techn...|        231010|Business Intellig...|                  23101012|           Oracle Consultant...|                2310|     Business Intellig...|                     23101012|              Oracle Consultant...|           231010|  Business Intellig...|                   2310|        Business Intellig...|                23|   Information Techn...|15-0000|Computer and Math...|15-2000|Mathematical Scie...|15-2050|Data Scientists|15-2051|Data Scientists|             null|                  null|          99|Unclassified Indu...|         999|Unclassified Indu...|        9999|Unclassified Indu...|       99999|Unclassified Indu...|      999999|Unclassified Indu...|
++--------------------+-----------------+----------------------+----------+--------+---------+--------+--------------------+--------------------+--------------------+-----------+-------------------+--------------------+--------------------+---------------+----------------+--------+--------------------+-----------+-------------------+----------------+---------------------+-------------+-------------------+-------------+------------------+---------------+--------------------+--------------------+--------------------+-------------+------+-----------+----------------+-------------------+---------+-----------+--------------------+--------------------+-------------+------+--------------+-----+--------------------+-----+----------+---------------+--------------------+---------------+--------------------+------------+--------------------+------------+--------------------+------+--------------------+------+--------------------+------+--------------------+------+--------------------+------+--------------------+------------------+-------------------+--------------------+--------------------+--------------------+--------------------+-----------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+----------+--------------------+----------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+----------+--------------------+----------+--------------------+----------+---------------+----------+---------------+---------------+--------------------+--------------+--------------------+--------------------------+-------------------------------+--------------------+-------------------------+-----------------------------+----------------------------------+-----------------+----------------------+-----------------------+----------------------------+------------------+-----------------------+-------+--------------------+-------+--------------------+-------+---------------+-------+---------------+-----------------+----------------------+------------+--------------------+------------+--------------------+------------+--------------------+------------+--------------------+------------+--------------------+
+only showing top 5 rows
+</code></pre>
+</div>
 </div>
 </section>
 <section id="salary-distribution-by-employment-type" class="level1" data-number="1">
@@ -176,17 +340,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Explanation:</strong> Write two sentences about what the graph reveals.</li>
 </ul>
 <div id="cell-5" class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your Code for 1st question here</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.<span class="bu">filter</span>((col(<span class="st">"SALARY_FROM"</span>).isNotNull()) <span class="op">&amp;</span> (col(<span class="st">"SALARY_FROM"</span>) <span class="op">&gt;</span> <span class="dv">0</span>))</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> df.select(<span class="st">"EMPLOYMENT_TYPE_NAME"</span>, <span class="st">"SALARY"</span>).toPandas()</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>pdf.head()</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.box(pdf, x<span class="op">=</span><span class="st">"EMPLOYMENT_TYPE_NAME"</span>, y<span class="op">=</span><span class="st">"SALARY"</span>, title<span class="op">=</span><span class="st">"Salary Distribution by Employment Type"</span>, color_discrete_sequence<span class="op">=</span>[<span class="st">"#36648B"</span>])</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>fig.update_layout(font_family<span class="op">=</span><span class="st">"Arial"</span>, title_font_size<span class="op">=</span><span class="dv">30</span>, title_x<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>fig.show()</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>fig.write_image(<span class="st">"output/Q1.png"</span>, width<span class="op">=</span><span class="dv">1920</span>, height<span class="op">=</span><span class="dv">540</span>, scale<span class="op">=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your Code for 1st question here</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.<span class="bu">filter</span>((col(<span class="st">"SALARY_FROM"</span>).isNotNull()) <span class="op">&amp;</span> (col(<span class="st">"SALARY_FROM"</span>) <span class="op">&gt;</span> <span class="dv">0</span>))</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> df.select(<span class="st">"EMPLOYMENT_TYPE_NAME"</span>, <span class="st">"SALARY"</span>).toPandas()</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>pdf.head()</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.box(pdf, x<span class="op">=</span><span class="st">"EMPLOYMENT_TYPE_NAME"</span>, y<span class="op">=</span><span class="st">"SALARY"</span>, title<span class="op">=</span><span class="st">"Salary Distribution by Employment Type"</span>, color_discrete_sequence<span class="op">=</span>[<span class="st">"#36648B"</span>])</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>fig.update_layout(font_family<span class="op">=</span><span class="st">"Arial"</span>, title_font_size<span class="op">=</span><span class="dv">30</span>, title_x<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>fig.show()</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>fig.write_image(<span class="st">"output/Q1.png"</span>, width<span class="op">=</span><span class="dv">1920</span>, height<span class="op">=</span><span class="dv">540</span>, scale<span class="op">=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -220,57 +384,57 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Explanation:</strong> Write two sentences about what the graph reveals.</li>
 </ul>
 <div id="cell-9" class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code for 2nd question here</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.<span class="bu">filter</span>(col(<span class="st">"SALARY_FROM"</span>) <span class="op">&gt;</span> <span class="dv">0</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> df.select(<span class="st">"NAICS2_NAME"</span>, <span class="st">"SALARY_FROM"</span>).toPandas()</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>pdf.head()</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.box(</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    pdf, </span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"NAICS2_NAME"</span>, </span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">"SALARY_FROM"</span>, </span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"Salary Distribution by Employment Type"</span>, </span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    color_discrete_sequence<span class="op">=</span>[<span class="st">"#36648B"</span>]</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>fig.update_layout(</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    font_family<span class="op">=</span><span class="st">"Arial"</span>,</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    title_font_size<span class="op">=</span><span class="dv">30</span>,                <span class="co"># 标题字体大小</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    title_x<span class="op">=</span><span class="fl">0.5</span>,                       <span class="co"># 标题居中</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    width<span class="op">=</span><span class="dv">1400</span>,                        <span class="co"># 增大宽度</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    height<span class="op">=</span><span class="dv">800</span>,                        <span class="co"># 增大高度</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    xaxis_title<span class="op">=</span><span class="st">"Employment Type"</span>,     <span class="co"># X轴标签</span></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    yaxis_title<span class="op">=</span><span class="st">"Salary From ($)"</span>,     <span class="co"># Y轴标签</span></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    xaxis<span class="op">=</span><span class="bu">dict</span>(</span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>        tickangle<span class="op">=</span><span class="dv">45</span>,                  <span class="co"># X轴标签旋转角度</span></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>        showgrid<span class="op">=</span><span class="va">True</span>,                 <span class="co"># 显示网格线</span></span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>        gridcolor<span class="op">=</span><span class="st">"rgba(211, 211, 211, 0.3)"</span>  <span class="co"># 网格线颜色</span></span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    yaxis<span class="op">=</span><span class="bu">dict</span>(</span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>        showgrid<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>        gridcolor<span class="op">=</span><span class="st">"rgba(211, 211, 211, 0.3)"</span></span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>    legend<span class="op">=</span><span class="bu">dict</span>(</span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>        title<span class="op">=</span><span class="st">"Employment Type"</span>,</span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>        font<span class="op">=</span><span class="bu">dict</span>(family<span class="op">=</span><span class="st">"Arial"</span>, size<span class="op">=</span><span class="dv">14</span>, color<span class="op">=</span><span class="st">"black"</span>),</span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>        bgcolor<span class="op">=</span><span class="st">"rgba(255, 255, 255, 0.8)"</span>,     <span class="co"># 图例背景色</span></span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>        bordercolor<span class="op">=</span><span class="st">"rgba(0, 0, 0, 0.1)"</span>,        <span class="co"># 图例边框</span></span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>        borderwidth<span class="op">=</span><span class="dv">1</span></span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a><span class="co"># 优化箱线图样式</span></span>
-<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>fig.update_traces(</span>
-<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>    marker<span class="op">=</span><span class="bu">dict</span>(opacity<span class="op">=</span><span class="fl">0.7</span>, line<span class="op">=</span><span class="bu">dict</span>(width<span class="op">=</span><span class="fl">1.5</span>)),   <span class="co"># 数据点透明度和边框线宽</span></span>
-<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>    boxmean<span class="op">=</span><span class="va">True</span>,                                     <span class="co"># 显示均值线</span></span>
-<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>    jitter<span class="op">=</span><span class="fl">0.3</span>,                                       <span class="co"># 数据点抖动效果</span></span>
-<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>    line<span class="op">=</span><span class="bu">dict</span>(width<span class="op">=</span><span class="dv">2</span>)                                <span class="co"># 箱线图边框线宽度</span></span>
-<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>fig.show()</span>
-<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>fig.write_image(<span class="st">"output/Q2.png"</span>, width<span class="op">=</span><span class="dv">1920</span>, height<span class="op">=</span><span class="dv">1080</span>, scale<span class="op">=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code for 2nd question here</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.<span class="bu">filter</span>(col(<span class="st">"SALARY_FROM"</span>) <span class="op">&gt;</span> <span class="dv">0</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> df.select(<span class="st">"NAICS2_NAME"</span>, <span class="st">"SALARY_FROM"</span>).toPandas()</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>pdf.head()</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.box(</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    pdf, </span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"NAICS2_NAME"</span>, </span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">"SALARY_FROM"</span>, </span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"Salary Distribution by Employment Type"</span>, </span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    color_discrete_sequence<span class="op">=</span>[<span class="st">"#36648B"</span>]</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>fig.update_layout(</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>    font_family<span class="op">=</span><span class="st">"Arial"</span>,</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>    title_font_size<span class="op">=</span><span class="dv">30</span>,                <span class="co"># 标题字体大小</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>    title_x<span class="op">=</span><span class="fl">0.5</span>,                       <span class="co"># 标题居中</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>    width<span class="op">=</span><span class="dv">1400</span>,                        <span class="co"># 增大宽度</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>    height<span class="op">=</span><span class="dv">800</span>,                        <span class="co"># 增大高度</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>    xaxis_title<span class="op">=</span><span class="st">"Employment Type"</span>,     <span class="co"># X轴标签</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>    yaxis_title<span class="op">=</span><span class="st">"Salary From ($)"</span>,     <span class="co"># Y轴标签</span></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>    xaxis<span class="op">=</span><span class="bu">dict</span>(</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>        tickangle<span class="op">=</span><span class="dv">45</span>,                  <span class="co"># X轴标签旋转角度</span></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>        showgrid<span class="op">=</span><span class="va">True</span>,                 <span class="co"># 显示网格线</span></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>        gridcolor<span class="op">=</span><span class="st">"rgba(211, 211, 211, 0.3)"</span>  <span class="co"># 网格线颜色</span></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>    yaxis<span class="op">=</span><span class="bu">dict</span>(</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>        showgrid<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>        gridcolor<span class="op">=</span><span class="st">"rgba(211, 211, 211, 0.3)"</span></span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>    legend<span class="op">=</span><span class="bu">dict</span>(</span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>        title<span class="op">=</span><span class="st">"Employment Type"</span>,</span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>        font<span class="op">=</span><span class="bu">dict</span>(family<span class="op">=</span><span class="st">"Arial"</span>, size<span class="op">=</span><span class="dv">14</span>, color<span class="op">=</span><span class="st">"black"</span>),</span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>        bgcolor<span class="op">=</span><span class="st">"rgba(255, 255, 255, 0.8)"</span>,     <span class="co"># 图例背景色</span></span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>        bordercolor<span class="op">=</span><span class="st">"rgba(0, 0, 0, 0.1)"</span>,        <span class="co"># 图例边框</span></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>        borderwidth<span class="op">=</span><span class="dv">1</span></span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a><span class="co"># 优化箱线图样式</span></span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a>fig.update_traces(</span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a>    marker<span class="op">=</span><span class="bu">dict</span>(opacity<span class="op">=</span><span class="fl">0.7</span>, line<span class="op">=</span><span class="bu">dict</span>(width<span class="op">=</span><span class="fl">1.5</span>)),   <span class="co"># 数据点透明度和边框线宽</span></span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a>    boxmean<span class="op">=</span><span class="va">True</span>,                                     <span class="co"># 显示均值线</span></span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a>    jitter<span class="op">=</span><span class="fl">0.3</span>,                                       <span class="co"># 数据点抖动效果</span></span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a>    line<span class="op">=</span><span class="bu">dict</span>(width<span class="op">=</span><span class="dv">2</span>)                                <span class="co"># 箱线图边框线宽度</span></span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a>fig.show()</span>
+<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a>fig.write_image(<span class="st">"output/Q2.png"</span>, width<span class="op">=</span><span class="dv">1920</span>, height<span class="op">=</span><span class="dv">1080</span>, scale<span class="op">=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -300,24 +464,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Explanation:</strong> Write two sentences about what the graph reveals.</li>
 </ul>
 <div id="cell-13" class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code for 3rd question here</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df_aggregated <span class="op">=</span> df.groupBy(<span class="st">"POSTED"</span>).count()</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> df_aggregated.toPandas()</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.line(pdf, x<span class="op">=</span><span class="st">"POSTED"</span>, y<span class="op">=</span><span class="st">"count"</span>, title<span class="op">=</span><span class="st">"Job Postings Over Time"</span>, line_shape<span class="op">=</span><span class="st">"linear"</span>,</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>              color_discrete_sequence<span class="op">=</span>[<span class="st">"#36648B"</span>])</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>fig.update_layout(</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    font_family<span class="op">=</span><span class="st">"Arial"</span>,</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    title_font_size<span class="op">=</span><span class="dv">24</span>,</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    xaxis_title<span class="op">=</span><span class="st">"Posted Date"</span>,</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    yaxis_title<span class="op">=</span><span class="st">"Number of Job Postings"</span>,</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    title_x<span class="op">=</span><span class="fl">0.5</span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>fig.show()</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>fig.write_image(<span class="st">"output/Q3.png"</span>, width<span class="op">=</span><span class="dv">1920</span>, height<span class="op">=</span><span class="dv">540</span>, scale<span class="op">=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code for 3rd question here</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>df_aggregated <span class="op">=</span> df.groupBy(<span class="st">"POSTED"</span>).count()</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> df_aggregated.toPandas()</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.line(pdf, x<span class="op">=</span><span class="st">"POSTED"</span>, y<span class="op">=</span><span class="st">"count"</span>, title<span class="op">=</span><span class="st">"Job Postings Over Time"</span>, line_shape<span class="op">=</span><span class="st">"linear"</span>,</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>              color_discrete_sequence<span class="op">=</span>[<span class="st">"#36648B"</span>])</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>fig.update_layout(</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    font_family<span class="op">=</span><span class="st">"Arial"</span>,</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    title_font_size<span class="op">=</span><span class="dv">24</span>,</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    xaxis_title<span class="op">=</span><span class="st">"Posted Date"</span>,</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>    yaxis_title<span class="op">=</span><span class="st">"Number of Job Postings"</span>,</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    title_x<span class="op">=</span><span class="fl">0.5</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>fig.show()</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>fig.write_image(<span class="st">"output/Q3.png"</span>, width<span class="op">=</span><span class="dv">1920</span>, height<span class="op">=</span><span class="dv">540</span>, scale<span class="op">=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -348,25 +512,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Explanation:</strong> Write two sentences about what the graph reveals.</li>
 </ul>
 <div id="cell-17" class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code for 4th question here</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>df_aggregated <span class="op">=</span> df.groupBy(<span class="st">"TITLE_NAME"</span>).count()</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>df_top_10 <span class="op">=</span> df_aggregated.orderBy(col(<span class="st">"count"</span>).desc()).limit(<span class="dv">10</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> df_top_10.toPandas()</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.bar(pdf, x<span class="op">=</span><span class="st">"TITLE_NAME"</span>, y<span class="op">=</span><span class="st">"count"</span>, title<span class="op">=</span><span class="st">"Top 10 Most Frequently Posted Job Titles"</span>, </span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>             color<span class="op">=</span><span class="st">"count"</span>, color_continuous_scale<span class="op">=</span><span class="st">"Blues"</span>)</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>fig.update_layout(</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    font_family<span class="op">=</span><span class="st">"Arial"</span>,</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    title_font_size<span class="op">=</span><span class="dv">24</span>,</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    xaxis_title<span class="op">=</span><span class="st">"Job Title"</span>,</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    yaxis_title<span class="op">=</span><span class="st">"Job Count"</span>,</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    title_x<span class="op">=</span><span class="fl">0.5</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>fig.show()</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>fig.write_image(<span class="st">"output/Q4.png"</span>, width<span class="op">=</span><span class="dv">1920</span>, height<span class="op">=</span><span class="dv">640</span>, scale<span class="op">=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code for 4th question here</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>df_aggregated <span class="op">=</span> df.groupBy(<span class="st">"TITLE_NAME"</span>).count()</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>df_top_10 <span class="op">=</span> df_aggregated.orderBy(col(<span class="st">"count"</span>).desc()).limit(<span class="dv">10</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> df_top_10.toPandas()</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.bar(pdf, x<span class="op">=</span><span class="st">"TITLE_NAME"</span>, y<span class="op">=</span><span class="st">"count"</span>, title<span class="op">=</span><span class="st">"Top 10 Most Frequently Posted Job Titles"</span>, </span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>             color<span class="op">=</span><span class="st">"count"</span>, color_continuous_scale<span class="op">=</span><span class="st">"Blues"</span>)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>fig.update_layout(</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    font_family<span class="op">=</span><span class="st">"Arial"</span>,</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    title_font_size<span class="op">=</span><span class="dv">24</span>,</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    xaxis_title<span class="op">=</span><span class="st">"Job Title"</span>,</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    yaxis_title<span class="op">=</span><span class="st">"Job Count"</span>,</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>    title_x<span class="op">=</span><span class="fl">0.5</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>fig.show()</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>fig.write_image(<span class="st">"output/Q4.png"</span>, width<span class="op">=</span><span class="dv">1920</span>, height<span class="op">=</span><span class="dv">640</span>, scale<span class="op">=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -396,22 +560,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Explanation:</strong> Write two sentences about what the graph reveals.</li>
 </ul>
 <div id="cell-21" class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code for 5th question here</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>df_aggregated <span class="op">=</span> df.groupBy(<span class="st">"REMOTE_TYPE_NAME"</span>).count()</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> df_aggregated.toPandas()</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.pie(pdf, names<span class="op">=</span><span class="st">"REMOTE_TYPE_NAME"</span>, values<span class="op">=</span><span class="st">"count"</span>, title<span class="op">=</span><span class="st">"Proportion of Remote vs On-site Job Postings"</span>,</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>             color<span class="op">=</span><span class="st">"REMOTE_TYPE_NAME"</span>, color_discrete_map<span class="op">=</span>{<span class="st">"Remote"</span>: <span class="st">"#00A3E0"</span>, <span class="st">"On-site"</span>: <span class="st">"#FF6F61"</span>})</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>fig.update_layout(</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    font_family<span class="op">=</span><span class="st">"Arial"</span>,</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    title_font_size<span class="op">=</span><span class="dv">24</span>,</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    title_x<span class="op">=</span><span class="fl">0.5</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>fig.show()</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>fig.write_image(<span class="st">"output/Q5.png"</span>, width<span class="op">=</span><span class="dv">960</span>, height<span class="op">=</span><span class="dv">540</span>, scale<span class="op">=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code for 5th question here</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>df_aggregated <span class="op">=</span> df.groupBy(<span class="st">"REMOTE_TYPE_NAME"</span>).count()</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> df_aggregated.toPandas()</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.pie(pdf, names<span class="op">=</span><span class="st">"REMOTE_TYPE_NAME"</span>, values<span class="op">=</span><span class="st">"count"</span>, title<span class="op">=</span><span class="st">"Proportion of Remote vs On-site Job Postings"</span>,</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>             color<span class="op">=</span><span class="st">"REMOTE_TYPE_NAME"</span>, color_discrete_map<span class="op">=</span>{<span class="st">"Remote"</span>: <span class="st">"#00A3E0"</span>, <span class="st">"On-site"</span>: <span class="st">"#FF6F61"</span>})</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>fig.update_layout(</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    font_family<span class="op">=</span><span class="st">"Arial"</span>,</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    title_font_size<span class="op">=</span><span class="dv">24</span>,</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    title_x<span class="op">=</span><span class="fl">0.5</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>fig.show()</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>fig.write_image(<span class="st">"output/Q5.png"</span>, width<span class="op">=</span><span class="dv">960</span>, height<span class="op">=</span><span class="dv">540</span>, scale<span class="op">=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -443,72 +607,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Explanation:</strong> Write two sentences about what the graph reveals.</li>
 </ul>
 <div id="cell-25" class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code for 6th question here</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 将 df DataFrame 中的 "SKILLS_NAME" 列的字符串数据按指定的分隔符 ",\n " 进行分割</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>df_split <span class="op">=</span> df.withColumn(<span class="st">"SKILLS_NAME"</span>, split(col(<span class="st">"SKILLS_NAME"</span>), <span class="st">",</span><span class="ch">\n</span><span class="st">  "</span>))</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 去掉 SKILLS_NAME 列中每个字符串末尾的换行符</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>df_split <span class="op">=</span> df_split.withColumn(</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"SKILLS_NAME"</span>,</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    transform(</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>        col(<span class="st">"SKILLS_NAME"</span>),</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>        <span class="kw">lambda</span> x: regexp_replace(x, <span class="vs">r'\n'</span>, <span class="st">''</span>)  <span class="co"># 替换每个字符串末尾的换行符</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="co"># 将每个数组元素展开为单独的行存放进skill列</span></span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>df_exploded <span class="op">=</span> df_split.withColumn(<span class="st">"Skill"</span>, explode(col(<span class="st">"SKILLS_NAME"</span>)))</span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="co"># 对 df_exploded 进行分组，并对每组数据进行计数</span></span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>df_aggregated <span class="op">=</span> df_exploded.groupBy(<span class="st">"NAICS2_NAME"</span>, <span class="st">"Skill"</span>).count()</span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert the result to Pandas DataFrame for plotting</span></span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> df_aggregated.toPandas()</span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a><span class="co"># 计算每个技能的总数量</span></span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>skill_count <span class="op">=</span> pdf.groupby(<span class="st">'Skill'</span>)[<span class="st">'count'</span>].<span class="bu">sum</span>().sort_values(ascending<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a><span class="co"># 选择最多的前十个技能</span></span>
-<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>top_skills <span class="op">=</span> skill_count.head(<span class="dv">10</span>).index</span>
-<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a><span class="co"># 过滤原始数据，只保留前十个技能</span></span>
-<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>pdf_filtered <span class="op">=</span> pdf[pdf[<span class="st">'Skill'</span>].isin(top_skills)]</span>
-<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a><span class="co"># 聚合数据，根据NAICS2_NAME和Skill进行分组，计算每个组合的技能总数</span></span>
-<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>pdf_grouped <span class="op">=</span> pdf_filtered.groupby([<span class="st">'NAICS2_NAME'</span>, <span class="st">'Skill'</span>])[<span class="st">'count'</span>].<span class="bu">sum</span>().unstack(fill_value<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a><span class="co"># 设置图形大小和分辨率</span></span>
-<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="fl">19.2</span>, <span class="fl">10.8</span>), dpi<span class="op">=</span><span class="dv">100</span>)  <span class="co"># figsize 为 1920x1080 像素，dpi 为 100</span></span>
-<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a><span class="co"># 绘制堆积条形图</span></span>
-<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">10</span>))</span>
-<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>pdf_grouped.plot(kind<span class="op">=</span><span class="st">'bar'</span>, stacked<span class="op">=</span><span class="va">True</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">8</span>))</span>
-<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a><span class="co"># 设置标题和标签</span></span>
-<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Stacked Bar Chart: Industry and Skill Distribution'</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
-<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Industry'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
-<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Skill Count'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
-<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a><span class="co"># 显示图例</span></span>
-<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a>plt.legend(title<span class="op">=</span><span class="st">'Skill'</span>, bbox_to_anchor<span class="op">=</span>(<span class="fl">1.05</span>, <span class="dv">1</span>), loc<span class="op">=</span><span class="st">'upper left'</span>)</span>
-<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a><span class="co"># 调整边距，避免标签重叠</span></span>
-<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a>plt.subplots_adjust(top<span class="op">=</span><span class="fl">0.9</span>, bottom<span class="op">=</span><span class="fl">0.15</span>)</span>
-<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a><span class="co"># 保存图像为 PNG 格式</span></span>
-<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">'output/Q6.png'</span>, bbox_inches<span class="op">=</span><span class="st">'tight'</span>)</span>
-<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a><span class="co"># 显示图形</span></span>
-<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code for 6th question here</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 将 df DataFrame 中的 "SKILLS_NAME" 列的字符串数据按指定的分隔符 ",\n " 进行分割</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>df_split <span class="op">=</span> df.withColumn(<span class="st">"SKILLS_NAME"</span>, split(col(<span class="st">"SKILLS_NAME"</span>), <span class="st">",</span><span class="ch">\n</span><span class="st">  "</span>))</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 去掉 SKILLS_NAME 列中每个字符串末尾的换行符</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>df_split <span class="op">=</span> df_split.withColumn(</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"SKILLS_NAME"</span>,</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    transform(</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>        col(<span class="st">"SKILLS_NAME"</span>),</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>        <span class="kw">lambda</span> x: regexp_replace(x, <span class="vs">r'\n'</span>, <span class="st">''</span>)  <span class="co"># 替换每个字符串末尾的换行符</span></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a><span class="co"># 将每个数组元素展开为单独的行存放进skill列</span></span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>df_exploded <span class="op">=</span> df_split.withColumn(<span class="st">"Skill"</span>, explode(col(<span class="st">"SKILLS_NAME"</span>)))</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a><span class="co"># 对 df_exploded 进行分组，并对每组数据进行计数</span></span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>df_aggregated <span class="op">=</span> df_exploded.groupBy(<span class="st">"NAICS2_NAME"</span>, <span class="st">"Skill"</span>).count()</span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert the result to Pandas DataFrame for plotting</span></span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> df_aggregated.toPandas()</span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a><span class="co"># 计算每个技能的总数量</span></span>
+<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a>skill_count <span class="op">=</span> pdf.groupby(<span class="st">'Skill'</span>)[<span class="st">'count'</span>].<span class="bu">sum</span>().sort_values(ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a><span class="co"># 选择最多的前十个技能</span></span>
+<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a>top_skills <span class="op">=</span> skill_count.head(<span class="dv">10</span>).index</span>
+<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a><span class="co"># 过滤原始数据，只保留前十个技能</span></span>
+<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a>pdf_filtered <span class="op">=</span> pdf[pdf[<span class="st">'Skill'</span>].isin(top_skills)]</span>
+<span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a><span class="co"># 聚合数据，根据NAICS2_NAME和Skill进行分组，计算每个组合的技能总数</span></span>
+<span id="cb13-41"><a href="#cb13-41" aria-hidden="true" tabindex="-1"></a>pdf_grouped <span class="op">=</span> pdf_filtered.groupby([<span class="st">'NAICS2_NAME'</span>, <span class="st">'Skill'</span>])[<span class="st">'count'</span>].<span class="bu">sum</span>().unstack(fill_value<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb13-42"><a href="#cb13-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-43"><a href="#cb13-43" aria-hidden="true" tabindex="-1"></a><span class="co"># 设置图形大小和分辨率</span></span>
+<span id="cb13-44"><a href="#cb13-44" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="fl">19.2</span>, <span class="fl">10.8</span>), dpi<span class="op">=</span><span class="dv">100</span>)  <span class="co"># figsize 为 1920x1080 像素，dpi 为 100</span></span>
+<span id="cb13-45"><a href="#cb13-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-46"><a href="#cb13-46" aria-hidden="true" tabindex="-1"></a><span class="co"># 绘制堆积条形图</span></span>
+<span id="cb13-47"><a href="#cb13-47" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">10</span>))</span>
+<span id="cb13-48"><a href="#cb13-48" aria-hidden="true" tabindex="-1"></a>pdf_grouped.plot(kind<span class="op">=</span><span class="st">'bar'</span>, stacked<span class="op">=</span><span class="va">True</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">8</span>))</span>
+<span id="cb13-49"><a href="#cb13-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-50"><a href="#cb13-50" aria-hidden="true" tabindex="-1"></a><span class="co"># 设置标题和标签</span></span>
+<span id="cb13-51"><a href="#cb13-51" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Stacked Bar Chart: Industry and Skill Distribution'</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb13-52"><a href="#cb13-52" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Industry'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
+<span id="cb13-53"><a href="#cb13-53" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Skill Count'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
+<span id="cb13-54"><a href="#cb13-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-55"><a href="#cb13-55" aria-hidden="true" tabindex="-1"></a><span class="co"># 显示图例</span></span>
+<span id="cb13-56"><a href="#cb13-56" aria-hidden="true" tabindex="-1"></a>plt.legend(title<span class="op">=</span><span class="st">'Skill'</span>, bbox_to_anchor<span class="op">=</span>(<span class="fl">1.05</span>, <span class="dv">1</span>), loc<span class="op">=</span><span class="st">'upper left'</span>)</span>
+<span id="cb13-57"><a href="#cb13-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-58"><a href="#cb13-58" aria-hidden="true" tabindex="-1"></a><span class="co"># 调整边距，避免标签重叠</span></span>
+<span id="cb13-59"><a href="#cb13-59" aria-hidden="true" tabindex="-1"></a>plt.subplots_adjust(top<span class="op">=</span><span class="fl">0.9</span>, bottom<span class="op">=</span><span class="fl">0.15</span>)</span>
+<span id="cb13-60"><a href="#cb13-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-61"><a href="#cb13-61" aria-hidden="true" tabindex="-1"></a><span class="co"># 保存图像为 PNG 格式</span></span>
+<span id="cb13-62"><a href="#cb13-62" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">'output/Q6.png'</span>, bbox_inches<span class="op">=</span><span class="st">'tight'</span>)</span>
+<span id="cb13-63"><a href="#cb13-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-64"><a href="#cb13-64" aria-hidden="true" tabindex="-1"></a><span class="co"># 显示图形</span></span>
+<span id="cb13-65"><a href="#cb13-65" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb13-66"><a href="#cb13-66" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -539,40 +703,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Explanation:</strong> Write two sentences about what the graph reveals.</li>
 </ul>
 <div id="cell-29" class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code for 7th question here</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyspark.sql <span class="im">import</span> functions <span class="im">as</span> F</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>df_aggregated <span class="op">=</span> df.groupBy(<span class="st">"ONET_NAME"</span>).agg(</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    F.expr(<span class="st">"percentile_approx(SALARY_FROM, 0.5)"</span>).alias(<span class="st">"Median_Salary"</span>),</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    F.count(<span class="st">"ID"</span>).alias(<span class="st">"Job_Postings"</span>)</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>df_aggregated_pd <span class="op">=</span> df_aggregated.toPandas()</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.scatter(</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    df_aggregated_pd,</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"ONET_NAME"</span>,</span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">"Median_Salary"</span>,</span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    size<span class="op">=</span><span class="st">"Job_Postings"</span>,</span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span><span class="st">"ONET_NAME"</span>, </span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"Salary Analysis by ONET Occupation Type"</span>,</span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    labels<span class="op">=</span>{<span class="st">'ONET_NAME'</span>: <span class="st">'ONET Occupation Type'</span>, <span class="st">'Median_Salary'</span>: <span class="st">'Median Salary'</span>},</span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    color_continuous_scale<span class="op">=</span><span class="st">"Viridis"</span>,</span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>fig.update_layout(</span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    font<span class="op">=</span><span class="bu">dict</span>(family<span class="op">=</span><span class="st">"Arial, sans-serif"</span>, size<span class="op">=</span><span class="dv">14</span>),</span>
-<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>    showlegend<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>    xaxis_title<span class="op">=</span><span class="st">"ONET Occupation Type"</span>,</span>
-<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>    yaxis_title<span class="op">=</span><span class="st">"Median Salary"</span>,</span>
-<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>    margin<span class="op">=</span><span class="bu">dict</span>(l<span class="op">=</span><span class="dv">50</span>, r<span class="op">=</span><span class="dv">50</span>, t<span class="op">=</span><span class="dv">100</span>, b<span class="op">=</span><span class="dv">50</span>),</span>
-<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>    title_font_size<span class="op">=</span><span class="dv">20</span>, </span>
-<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>    title_x<span class="op">=</span><span class="fl">0.2</span></span>
-<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>fig.show()</span>
-<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>fig.write_image(<span class="st">"output/Q7.png"</span>, width<span class="op">=</span><span class="dv">960</span>, height<span class="op">=</span><span class="dv">540</span>, scale<span class="op">=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code for 7th question here</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyspark.sql <span class="im">import</span> functions <span class="im">as</span> F</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>df_aggregated <span class="op">=</span> df.groupBy(<span class="st">"ONET_NAME"</span>).agg(</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    F.expr(<span class="st">"percentile_approx(SALARY_FROM, 0.5)"</span>).alias(<span class="st">"Median_Salary"</span>),</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    F.count(<span class="st">"ID"</span>).alias(<span class="st">"Job_Postings"</span>)</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>df_aggregated_pd <span class="op">=</span> df_aggregated.toPandas()</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.scatter(</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    df_aggregated_pd,</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"ONET_NAME"</span>,</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">"Median_Salary"</span>,</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>    size<span class="op">=</span><span class="st">"Job_Postings"</span>,</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span><span class="st">"ONET_NAME"</span>, </span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"Salary Analysis by ONET Occupation Type"</span>,</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>    labels<span class="op">=</span>{<span class="st">'ONET_NAME'</span>: <span class="st">'ONET Occupation Type'</span>, <span class="st">'Median_Salary'</span>: <span class="st">'Median Salary'</span>},</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>    color_continuous_scale<span class="op">=</span><span class="st">"Viridis"</span>,</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>fig.update_layout(</span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>    font<span class="op">=</span><span class="bu">dict</span>(family<span class="op">=</span><span class="st">"Arial, sans-serif"</span>, size<span class="op">=</span><span class="dv">14</span>),</span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>    showlegend<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>    xaxis_title<span class="op">=</span><span class="st">"ONET Occupation Type"</span>,</span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>    yaxis_title<span class="op">=</span><span class="st">"Median Salary"</span>,</span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>    margin<span class="op">=</span><span class="bu">dict</span>(l<span class="op">=</span><span class="dv">50</span>, r<span class="op">=</span><span class="dv">50</span>, t<span class="op">=</span><span class="dv">100</span>, b<span class="op">=</span><span class="dv">50</span>),</span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>    title_font_size<span class="op">=</span><span class="dv">20</span>, </span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>    title_x<span class="op">=</span><span class="fl">0.2</span></span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a>fig.show()</span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>fig.write_image(<span class="st">"output/Q7.png"</span>, width<span class="op">=</span><span class="dv">960</span>, height<span class="op">=</span><span class="dv">540</span>, scale<span class="op">=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -603,73 +767,73 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Explanation:</strong> Write two sentences about what the graph reveals.</li>
 </ul>
 <div id="cell-33" class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code for 8th question here</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.graph_objects <span class="im">as</span> go</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyspark.sql <span class="im">import</span> SparkSession</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyspark.sql <span class="im">import</span> functions <span class="im">as</span> F</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 步骤 1: 汇总数据</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 统计 SOC_2021_2_NAME 和 SOC_2021_3_NAME 之间的转换次数</span></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>df_transitions <span class="op">=</span> df.groupBy(<span class="st">"SOC_2021_2_NAME"</span>, <span class="st">"SOC_2021_3_NAME"</span>).count()</span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 转换为 Pandas DataFrame</span></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>df_transitions_pd <span class="op">=</span> df_transitions.toPandas()</span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="co">#如果数据量过大，桑基图可能会变得复杂。可以过滤掉转换次数较少的记录</span></span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>df_transitions_pd <span class="op">=</span> df_transitions_pd[df_transitions_pd[<span class="st">"count"</span>] <span class="op">&gt;</span> <span class="dv">10</span>]</span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="co"># 步骤 2: 创建桑基图</span></span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="co"># 获取唯一的来源和目标节点</span></span>
-<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>unique_sources <span class="op">=</span> df_transitions_pd[<span class="st">"SOC_2021_2_NAME"</span>].unique()</span>
-<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>unique_targets <span class="op">=</span> df_transitions_pd[<span class="st">"SOC_2021_3_NAME"</span>].unique()</span>
-<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建节点列表</span></span>
-<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>nodes <span class="op">=</span> <span class="bu">list</span>(unique_sources) <span class="op">+</span> <span class="bu">list</span>(unique_targets)</span>
-<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建节点索引映射</span></span>
-<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>node_indices <span class="op">=</span> {node: i <span class="cf">for</span> i, node <span class="kw">in</span> <span class="bu">enumerate</span>(nodes)}</span>
-<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建桑基图的链接数据</span></span>
-<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>links <span class="op">=</span> {</span>
-<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>    <span class="st">"source"</span>: [node_indices[source] <span class="cf">for</span> source <span class="kw">in</span> df_transitions_pd[<span class="st">"SOC_2021_2_NAME"</span>]],</span>
-<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>    <span class="st">"target"</span>: [node_indices[target] <span class="cf">for</span> target <span class="kw">in</span> df_transitions_pd[<span class="st">"SOC_2021_3_NAME"</span>]],</span>
-<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>    <span class="st">"value"</span>: df_transitions_pd[<span class="st">"count"</span>].tolist()</span>
-<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a><span class="co"># 步骤 3: 创建桑基图</span></span>
-<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> go.Figure(go.Sankey(</span>
-<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>    node<span class="op">=</span><span class="bu">dict</span>(</span>
-<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>        pad<span class="op">=</span><span class="dv">15</span>,  <span class="co"># 节点之间的间距</span></span>
-<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>        thickness<span class="op">=</span><span class="dv">20</span>,  <span class="co"># 节点厚度</span></span>
-<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>        line<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span><span class="st">"black"</span>, width<span class="op">=</span><span class="fl">0.5</span>),  <span class="co"># 节点边框样式</span></span>
-<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a>        label<span class="op">=</span>nodes,  <span class="co"># 节点标签</span></span>
-<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a>        color<span class="op">=</span><span class="st">"blue"</span>  <span class="co"># 节点颜色</span></span>
-<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a>    link<span class="op">=</span><span class="bu">dict</span>(</span>
-<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a>        source<span class="op">=</span>links[<span class="st">"source"</span>],  <span class="co"># 来源节点索引</span></span>
-<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a>        target<span class="op">=</span>links[<span class="st">"target"</span>],  <span class="co"># 目标节点索引</span></span>
-<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a>        value<span class="op">=</span>links[<span class="st">"value"</span>],  <span class="co"># 转换次数</span></span>
-<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a>        color<span class="op">=</span><span class="st">"rgba(0, 128, 0, 0.4)"</span>  <span class="co"># 链接颜色</span></span>
-<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a>))</span>
-<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a><span class="co"># 步骤 4: 自定义布局和样式</span></span>
-<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a>fig.update_layout(</span>
-<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"Career Pathway Trends (Sankey Diagram)"</span>,</span>
-<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a>    font<span class="op">=</span><span class="bu">dict</span>(family<span class="op">=</span><span class="st">"Arial"</span>, size<span class="op">=</span><span class="dv">12</span>, color<span class="op">=</span><span class="st">"black"</span>),</span>
-<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a>    plot_bgcolor<span class="op">=</span><span class="st">"white"</span>,  <span class="co"># 背景颜色</span></span>
-<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a>    paper_bgcolor<span class="op">=</span><span class="st">"white"</span>,  <span class="co"># 画布颜色</span></span>
-<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a>    xaxis<span class="op">=</span><span class="bu">dict</span>(showgrid<span class="op">=</span><span class="va">False</span>),  <span class="co"># 隐藏 X 轴网格</span></span>
-<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a>    yaxis<span class="op">=</span><span class="bu">dict</span>(showgrid<span class="op">=</span><span class="va">False</span>),  <span class="co"># 隐藏 Y 轴网格</span></span>
-<span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a>    title_font_size<span class="op">=</span><span class="dv">20</span>, </span>
-<span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a>    title_x<span class="op">=</span><span class="fl">0.5</span></span>
-<span id="cb9-62"><a href="#cb9-62" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a><span class="co"># 显示桑基图</span></span>
-<span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a>fig.show()</span>
-<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a>fig.write_image(<span class="st">"output/Q8.png"</span>, width<span class="op">=</span><span class="dv">1920</span>, height<span class="op">=</span><span class="dv">540</span>, scale<span class="op">=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code for 8th question here</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.graph_objects <span class="im">as</span> go</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyspark.sql <span class="im">import</span> SparkSession</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyspark.sql <span class="im">import</span> functions <span class="im">as</span> F</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 步骤 1: 汇总数据</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 统计 SOC_2021_2_NAME 和 SOC_2021_3_NAME 之间的转换次数</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>df_transitions <span class="op">=</span> df.groupBy(<span class="st">"SOC_2021_2_NAME"</span>, <span class="st">"SOC_2021_3_NAME"</span>).count()</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 转换为 Pandas DataFrame</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>df_transitions_pd <span class="op">=</span> df_transitions.toPandas()</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="co">#如果数据量过大，桑基图可能会变得复杂。可以过滤掉转换次数较少的记录</span></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>df_transitions_pd <span class="op">=</span> df_transitions_pd[df_transitions_pd[<span class="st">"count"</span>] <span class="op">&gt;</span> <span class="dv">10</span>]</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a><span class="co"># 步骤 2: 创建桑基图</span></span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a><span class="co"># 获取唯一的来源和目标节点</span></span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>unique_sources <span class="op">=</span> df_transitions_pd[<span class="st">"SOC_2021_2_NAME"</span>].unique()</span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>unique_targets <span class="op">=</span> df_transitions_pd[<span class="st">"SOC_2021_3_NAME"</span>].unique()</span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建节点列表</span></span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>nodes <span class="op">=</span> <span class="bu">list</span>(unique_sources) <span class="op">+</span> <span class="bu">list</span>(unique_targets)</span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建节点索引映射</span></span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>node_indices <span class="op">=</span> {node: i <span class="cf">for</span> i, node <span class="kw">in</span> <span class="bu">enumerate</span>(nodes)}</span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建桑基图的链接数据</span></span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>links <span class="op">=</span> {</span>
+<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a>    <span class="st">"source"</span>: [node_indices[source] <span class="cf">for</span> source <span class="kw">in</span> df_transitions_pd[<span class="st">"SOC_2021_2_NAME"</span>]],</span>
+<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a>    <span class="st">"target"</span>: [node_indices[target] <span class="cf">for</span> target <span class="kw">in</span> df_transitions_pd[<span class="st">"SOC_2021_3_NAME"</span>]],</span>
+<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>    <span class="st">"value"</span>: df_transitions_pd[<span class="st">"count"</span>].tolist()</span>
+<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a><span class="co"># 步骤 3: 创建桑基图</span></span>
+<span id="cb15-36"><a href="#cb15-36" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> go.Figure(go.Sankey(</span>
+<span id="cb15-37"><a href="#cb15-37" aria-hidden="true" tabindex="-1"></a>    node<span class="op">=</span><span class="bu">dict</span>(</span>
+<span id="cb15-38"><a href="#cb15-38" aria-hidden="true" tabindex="-1"></a>        pad<span class="op">=</span><span class="dv">15</span>,  <span class="co"># 节点之间的间距</span></span>
+<span id="cb15-39"><a href="#cb15-39" aria-hidden="true" tabindex="-1"></a>        thickness<span class="op">=</span><span class="dv">20</span>,  <span class="co"># 节点厚度</span></span>
+<span id="cb15-40"><a href="#cb15-40" aria-hidden="true" tabindex="-1"></a>        line<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span><span class="st">"black"</span>, width<span class="op">=</span><span class="fl">0.5</span>),  <span class="co"># 节点边框样式</span></span>
+<span id="cb15-41"><a href="#cb15-41" aria-hidden="true" tabindex="-1"></a>        label<span class="op">=</span>nodes,  <span class="co"># 节点标签</span></span>
+<span id="cb15-42"><a href="#cb15-42" aria-hidden="true" tabindex="-1"></a>        color<span class="op">=</span><span class="st">"blue"</span>  <span class="co"># 节点颜色</span></span>
+<span id="cb15-43"><a href="#cb15-43" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb15-44"><a href="#cb15-44" aria-hidden="true" tabindex="-1"></a>    link<span class="op">=</span><span class="bu">dict</span>(</span>
+<span id="cb15-45"><a href="#cb15-45" aria-hidden="true" tabindex="-1"></a>        source<span class="op">=</span>links[<span class="st">"source"</span>],  <span class="co"># 来源节点索引</span></span>
+<span id="cb15-46"><a href="#cb15-46" aria-hidden="true" tabindex="-1"></a>        target<span class="op">=</span>links[<span class="st">"target"</span>],  <span class="co"># 目标节点索引</span></span>
+<span id="cb15-47"><a href="#cb15-47" aria-hidden="true" tabindex="-1"></a>        value<span class="op">=</span>links[<span class="st">"value"</span>],  <span class="co"># 转换次数</span></span>
+<span id="cb15-48"><a href="#cb15-48" aria-hidden="true" tabindex="-1"></a>        color<span class="op">=</span><span class="st">"rgba(0, 128, 0, 0.4)"</span>  <span class="co"># 链接颜色</span></span>
+<span id="cb15-49"><a href="#cb15-49" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb15-50"><a href="#cb15-50" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb15-51"><a href="#cb15-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-52"><a href="#cb15-52" aria-hidden="true" tabindex="-1"></a><span class="co"># 步骤 4: 自定义布局和样式</span></span>
+<span id="cb15-53"><a href="#cb15-53" aria-hidden="true" tabindex="-1"></a>fig.update_layout(</span>
+<span id="cb15-54"><a href="#cb15-54" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"Career Pathway Trends (Sankey Diagram)"</span>,</span>
+<span id="cb15-55"><a href="#cb15-55" aria-hidden="true" tabindex="-1"></a>    font<span class="op">=</span><span class="bu">dict</span>(family<span class="op">=</span><span class="st">"Arial"</span>, size<span class="op">=</span><span class="dv">12</span>, color<span class="op">=</span><span class="st">"black"</span>),</span>
+<span id="cb15-56"><a href="#cb15-56" aria-hidden="true" tabindex="-1"></a>    plot_bgcolor<span class="op">=</span><span class="st">"white"</span>,  <span class="co"># 背景颜色</span></span>
+<span id="cb15-57"><a href="#cb15-57" aria-hidden="true" tabindex="-1"></a>    paper_bgcolor<span class="op">=</span><span class="st">"white"</span>,  <span class="co"># 画布颜色</span></span>
+<span id="cb15-58"><a href="#cb15-58" aria-hidden="true" tabindex="-1"></a>    xaxis<span class="op">=</span><span class="bu">dict</span>(showgrid<span class="op">=</span><span class="va">False</span>),  <span class="co"># 隐藏 X 轴网格</span></span>
+<span id="cb15-59"><a href="#cb15-59" aria-hidden="true" tabindex="-1"></a>    yaxis<span class="op">=</span><span class="bu">dict</span>(showgrid<span class="op">=</span><span class="va">False</span>),  <span class="co"># 隐藏 Y 轴网格</span></span>
+<span id="cb15-60"><a href="#cb15-60" aria-hidden="true" tabindex="-1"></a>    title_font_size<span class="op">=</span><span class="dv">20</span>, </span>
+<span id="cb15-61"><a href="#cb15-61" aria-hidden="true" tabindex="-1"></a>    title_x<span class="op">=</span><span class="fl">0.5</span></span>
+<span id="cb15-62"><a href="#cb15-62" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb15-63"><a href="#cb15-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-64"><a href="#cb15-64" aria-hidden="true" tabindex="-1"></a><span class="co"># 显示桑基图</span></span>
+<span id="cb15-65"><a href="#cb15-65" aria-hidden="true" tabindex="-1"></a>fig.show()</span>
+<span id="cb15-66"><a href="#cb15-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-67"><a href="#cb15-67" aria-hidden="true" tabindex="-1"></a>fig.write_image(<span class="st">"output/Q8.png"</span>, width<span class="op">=</span><span class="dv">1920</span>, height<span class="op">=</span><span class="dv">540</span>, scale<span class="op">=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
